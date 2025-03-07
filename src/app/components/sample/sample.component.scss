@@ -27,6 +27,12 @@ $breakpoint-md: 768px;
 $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 
+.containermain{
+  background-color: red;
+  height: 30px !important;
+  width: 100%;
+}
+
 .container {
   width: 100%;
   max-width: 1024px;
@@ -115,7 +121,7 @@ p {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 100%;
+    // height: 100%;
   }
 
   .logo {
@@ -191,7 +197,7 @@ p {
 // Main Content
 .main-content {
   padding: calc(#{$header-height} + 2rem) 0 calc(#{$footer-height} + 2rem);
-  min-height: 100vh;
+  // min-height: 100vh;
   overflow: hidden;
   background-color: $white; 
 }
