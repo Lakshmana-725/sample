@@ -1,0 +1,197 @@
+<!-- Header -->
+<header class="header">
+  <div class="container">
+    <div class="logo">TechPortal</div>
+    <nav class="navigation">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Main Content -->
+<main class="main-content">
+  <div class="container">
+    <!-- User Information Form -->
+    <section class="section form-section">
+      <h2>User Information Sumanth</h2>
+      <form #userForm="ngForm" class="user-form" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input
+              type="text"
+              id="firstName"
+              name="firstName"
+              [(ngModel)]="userInfo.firstName"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input
+              type="text"
+              id="lastName"
+              name="lastName"
+              [(ngModel)]="userInfo.lastName"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobile">Mobile Number</label>
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              [(ngModel)]="userInfo.mobile"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="userInfo.email"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="address">Address</label>
+          <textarea
+            id="address"
+            name="address"
+            rows="3"
+            [(ngModel)]="userInfo.address"
+          ></textarea>
+        </div>
+        <div class="form-group">
+          <label for="occupation">Occupation</label>
+          <input
+            type="text"
+            id="occupation"
+            name="occupation"
+            [(ngModel)]="userInfo.occupation"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </section>
+
+    <!-- Height and Width -->
+    <div class="height-width-section">
+      <h2>Height and Width</h2>
+      <p>Device Height: {{ deviceHeight }} px</p>
+      <p>Device Width: {{ deviceWidth }} px</p>
+      <p>Viewport Height: {{ viewportHeight }} px</p>
+      <!-- <p>Keyboard Adjustment Height: {{ keyboardAdjustmentHeight }}</p>     -->
+    </div>
+
+    <!-- User Information -->
+    <div>
+      <h2>User Information</h2>
+      <p>First Name: {{ userInfo.firstName }}</p>
+      <p>Last Name: {{ userInfo.lastName }}</p>
+      <p>Mobile Number: {{ userInfo.mobile }}</p>
+      <p>Email Address: {{ userInfo.email }}</p>
+      <p>Address: {{ userInfo.address }}</p>
+      <p>Occupation: {{ userInfo.occupation }}</p>
+    </div>
+
+    <!-- Technology Cards -->
+    <section class="section cards-section">
+      <h2>Technology Trends</h2>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-mobile-alt"></i>
+          </div>
+          <h3>Social Media</h3>
+          <p>
+            Social media platforms continue to evolve with new features focused
+            on short-form video content, augmented reality experiences, and
+            enhanced privacy controls. Users spend an average of 2.5 hours daily
+            across platforms.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-cloud"></i>
+          </div>
+          <h3>Cloud Computing</h3>
+          <p>
+            Cloud services are expanding rapidly with multi-cloud strategies
+            becoming the norm. Organizations are increasingly adopting
+            serverless architectures and containerization for improved
+            scalability and cost efficiency.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <h3>Artificial Intelligence</h3>
+          <p>
+            AI adoption continues to accelerate across industries with
+            particular growth in generative AI applications. Machine learning
+            models are becoming more accessible through no-code platforms and
+            pre-trained solutions.
+          </p>
+        </div>
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Cybersecurity</h3>
+          <p>
+            With increasing digital threats, zero-trust security frameworks are
+            gaining prominence. Organizations are investing in advanced threat
+            detection systems and comprehensive security awareness training
+            programs.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Users Table -->
+    <section class="section table-section">
+      <h2>Users</h2>
+      <div class="table-responsive">
+        <table class="periodic-table">
+          <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{ user.id }}</td>
+              <td>
+                <img [src]="user.photo" alt="User Photo" class="user-photo" />
+              </td>
+              <td>{{ user.name }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.phone }}</td>
+              <td>{{ user.website }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-buttons">
+        <button class="btn btn-secondary">Learn More</button>
+        <button class="btn btn-primary">Contact Us</button>
+      </div>
+    </div>
+  </div>
+</footer>
