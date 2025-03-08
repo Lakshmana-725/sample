@@ -1,1 +1,137 @@
-<p>home works!</p>
+<div [style.height]="heightVar()" [style.width]="'100%'" [style.backgroundColor]="'red'" [style.margin]="'0'" >
+    <div class="abc">
+    <div class="container">
+        <div class="logo">TechPortal Lakshman</div>
+        <nav class="navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="article">
+        <div class="content">
+            <h1>Home</h1>
+        </div>
+    </div>
+    <div class="button">
+        <button (click)="onClick()">
+            Click
+        </button>
+    </div>
+    <div class="clicks">
+        <span>Clicks: {{click}}</span>
+    </div>
+    <input (click)="onClick()" type="number" name="count" id="count" />
+    <div class="container">
+        <!-- User Information Form -->
+        <section class="section form-section">
+            <form #userForm="ngForm" class="user-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" [(ngModel)]="userInfo.firstName"
+                            (click)="onClick()" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" [(ngModel)]="userInfo.lastName" required />
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number</label>
+                        <input type="tel" id="mobile" name="mobile" [(ngModel)]="userInfo.mobile" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" [(ngModel)]="userInfo.email" required />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" rows="3" [(ngModel)]="userInfo.address"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="occupation">Occupation</label>
+                    <input type="text" id="occupation" name="occupation" [(ngModel)]="userInfo.occupation" />
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </section>
+    
+        <!-- Height and Width -->
+       
+        <!-- User Information -->
+        
+    
+        <!-- Technology Cards -->
+        <section class="section cards-section">
+            <h2>Technology Trends</h2>
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Social Media</h3>
+                    <p>
+                        Social media platforms continue to evolve with new features
+                        focused on short-form video content, augmented reality
+                        experiences, and enhanced privacy controls. Users spend an average
+                        of 2.5 hours daily across platforms.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h3>Cloud Computing</h3>
+                    <p>
+                        Cloud services are expanding rapidly with multi-cloud strategies
+                        becoming the norm. Organizations are increasingly adopting
+                        serverless architectures and containerization for improved
+                        scalability and cost efficiency.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>Artificial Intelligence</h3>
+                    <p>
+                        AI adoption continues to accelerate across industries with
+                        particular growth in generative AI applications. Machine learning
+                        models are becoming more accessible through no-code platforms and
+                        pre-trained solutions.
+                    </p>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity</h3>
+                    <p>
+                        With increasing digital threats, zero-trust security frameworks
+                        are gaining prominence. Organizations are investing in advanced
+                        threat detection systems and comprehensive security awareness
+                        training programs.
+                    </p>
+                </div>
+            </div>
+        </section>
+    
+        <!-- Users Table -->
+       
+    </div>
+    </div>
+    <div class="ft">
+        <div class="footer-content">
+            <div class="footer-buttons">
+                <button class="btn btn-secondary">Learn More</button>
+                <button class="btn btn-primary">Contact Us</button>
+            </div>
+        </div>
+    </div>
+</div>

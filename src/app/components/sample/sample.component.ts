@@ -36,19 +36,20 @@ export class SampleComponent implements OnInit, OnDestroy {
     address: '',
     occupation: '',
   };
-  heightVar =signal(`${window.innerHeight / 2}px`);
+  heightVar = signal(`${window.innerHeight / 2}px`);
 
   users: any[] = []; // Array to hold user data
   private viewportHandler: any;
   private isBrowser: boolean;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: any,
-    private cdr: ChangeDetectorRef) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: any,
+    private cdr: ChangeDetectorRef
+  ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     if (this.isBrowser) {
       this.fetchRandomUsers();
     }
-
   }
 
   // Random user generator function
@@ -61,8 +62,9 @@ export class SampleComponent implements OnInit, OnDestroy {
       firstNames[Math.floor(Math.random() * firstNames.length)];
     const randomLastName =
       lastNames[Math.floor(Math.random() * lastNames.length)];
-    const randomEmail = `${randomFirstName.toLowerCase()}.${randomLastName.toLowerCase()}@${domains[Math.floor(Math.random() * domains.length)]
-      }`;
+    const randomEmail = `${randomFirstName.toLowerCase()}.${randomLastName.toLowerCase()}@${
+      domains[Math.floor(Math.random() * domains.length)]
+    }`;
     const randomPhone = `+91-${Math.floor(Math.random() * 1000000000)}`;
     const randomWebsite = `${randomFirstName.toLowerCase()}${randomLastName.toLowerCase()}.com`;
     const randomPhoto = `https://picsum.photos/100/100?random=${id}`; // Placeholder image URL
@@ -97,7 +99,7 @@ export class SampleComponent implements OnInit, OnDestroy {
       console.log('SampleComponent: ngOnInit: isBrowser');
       this.initializeViewportHandler();
     }
-   
+
     this.deviceHeight = window.innerHeight;
     this.deviceWidth = window.innerWidth;
     console.log('SampleComponent: ngOnInit: deviceHeight:', this.deviceHeight);
@@ -129,7 +131,7 @@ export class SampleComponent implements OnInit, OnDestroy {
 
         this.keyboardAdjustmentHeight =
           keyboardHeight > 0 ? `-${keyboardHeight}px` : `-${keyboardHeight}px`;
-        this.heightVar.set(`${this.keyboardAdjustmentHeight}`); 
+        this.heightVar.set(`${this.keyboardAdjustmentHeight}`);
 
         document.documentElement.style.setProperty(
           '--keyboard-offset',
@@ -164,7 +166,6 @@ export class SampleComponent implements OnInit, OnDestroy {
     }
   }
   onClick() {
-
     const height = window.innerHeight;
 
     setTimeout(() => {
